@@ -10,3 +10,8 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Angular Material
 - [Getting Started](https://material.angular.io/guide/getting-started)
 - [Components](https://material.angular.io/components/categories)
+
+## Public API
+- [Options](https://github.com/public-apis/public-apis)
+Choosen theme = Cat Facts:
+- [meowfacts](https://github.com/wh-iterabb-it/meowfacts)
