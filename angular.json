@@ -10,11 +10,11 @@
           "style": "scss",
           "skipTests": true
         },
-        "module": {
-          "spec": false
+        "@schematics/angular:module": {
+          "skipTests": true
         },
-        "service": {
-          "spec": false
+        "@schematics/angular:service": {
+          "skipTests": true
         }
       },
       "root": "",
