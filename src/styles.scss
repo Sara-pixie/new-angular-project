@@ -1,4 +1,8 @@
-/* You can add global styles to this file, and also import other style files */
+$primary-color: rgba(128, 0, 128, 1);
+$primary-color-fade: rgba(128, 0, 128, .5);
+
+$white: #fff;
+$black: #111;
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

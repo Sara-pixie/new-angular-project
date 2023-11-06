@@ -1,0 +1,38 @@
+@import '../../../styles.scss';
+
+.title-container {
+  --text-color: #{$primary-color};
+  --background-color: #{$white};
+  --animation-speed: 500ms;
+  --animation-delay: 50ms;
+
+  background: linear-gradient(to right, var(--text-color) 50%, var(--background-color) 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+  transition: background-position var(--animation-speed) linear;
+  .title {
+    color: var(--background-color);
+    z-index: 5;
+    position: relative;
+    background: var(--background-color);;
+    text-shadow: -1px 1px var(--text-color), 3px 3px var(--text-color), 3px 0 var(--text-color), 1px -1px var(--text-color);
+    mix-blend-mode: normal;
+    transition: all var(--animation-speed) ease var(--animation-delay);
+    font-size: 80px;
+    line-height: 100px;
+    font-weight: 700;
+    text-align: center;
+    word-break: break-word;
+  }
+  &.fill {
+    background-position: left bottom;
+    .title {
+      text-shadow: none;
+      color: $black;
+      mix-blend-mode: screen;
+      text-shadow: -1px 1px $black, 3px 3px $black, 3px 0 $black, 1px -1px $black;
+    }
+  }
+  border-bottom: 2px solid $primary-color-fade;
+  box-shadow: 0px 5px 10px $primary-color-fade;
+}
