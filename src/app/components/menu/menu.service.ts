@@ -25,16 +25,6 @@ export class MenuService {
         fontIcon: 'home',
         redirectUrl: '/home',
       },
-      {
-        name: 'MENU_ITEMS.HOME',
-        fontIcon: 'home2',
-        redirectUrl: '/22',
-      },
-      {
-        name: 'MENU_ITEMS.HOME',
-        fontIcon: 'home3',
-        redirectUrl: '/33',
-      }
     ];
   }
 

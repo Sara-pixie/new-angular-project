@@ -21,7 +21,6 @@ export class MenuComponent {
     private menuService: MenuService
   ) {
     this.menuItems = menuService.getMenuLinks();
-    console.log(this.menuItems)
     router.events.subscribe(e => {
       if(e instanceof NavigationEnd) {
         this._setActiveItem(e.urlAfterRedirects);
@@ -58,7 +57,6 @@ export class MenuComponent {
         newIndicatorTopOffset = topOffset + (elementHeight / 2) - indicatorHalfHeight + 'px';
       }
     }
-    console.log('newIndicatorTopOffset',newIndicatorTopOffset);
     this.indicator.nativeElement.style.top = newIndicatorTopOffset;
   }
 
