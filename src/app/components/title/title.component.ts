@@ -1,10 +1,12 @@
+import { TranslateModule } from '@ngx-translate/core';
 import { AfterViewInit, Component, ElementRef, Input, ViewChild } from '@angular/core';
 
 @Component({
     selector: 'app-title',
     templateUrl: './title.component.html',
     styleUrls: ['./title.component.scss'],
-    standalone: true
+    standalone: true,
+    imports: [TranslateModule]
 })
 export class TitleComponent implements AfterViewInit {
   @ViewChild('titleElementRef') titleElementRef!: ElementRef;
