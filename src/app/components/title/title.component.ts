@@ -8,7 +8,7 @@ import { AfterViewInit, Component, ElementRef, Input, ViewChild } from '@angular
 })
 export class TitleComponent implements AfterViewInit {
   @ViewChild('titleElementRef') titleElementRef!: ElementRef;
-  @Input({ required: true }) title!: string;
+  @Input({ required: true }) title: string = '';
 
   constructor() {}
 
