@@ -7,6 +7,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - [Medium blog](https://medium.com/@evincedevelop/whats-new-in-angular-16-a-deep-dive-into-the-latest-features-5985d477003c)
 - [Standalone](https://angular.io/guide/standalone-migration) when creating components use `ng g c component-path/name --skip-import` command!
 - [Routes Input Binding](https://angular.io/api/router/withComponentInputBinding) `withComponentInputBinding` as part of the `provideRouter` in [`main.ts`](https://github.com/Sara-pixie/new-angular-project/blob/master/src/main.ts) file
+- Translate Service (use `npm install @ngx-translate/core --save` and `npm install @ngx-translate/http-loader --save` commands to install, then add the `TranslateModule.forRoot(translateModuleConfig)` with the config const to `importProvidersFrom` in [`main.ts`](https://github.com/Sara-pixie/new-angular-project/blob/master/src/main.ts) file). In every standalone component.ts you should import `TranslateModule` with `imports: [TranslateModule]`
 
 ## Angular Material
 - [Getting Started](https://material.angular.io/guide/getting-started)
