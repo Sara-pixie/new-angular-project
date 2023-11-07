@@ -15,3 +15,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - [Options](https://github.com/public-apis/public-apis)
 <br><br>Choosen theme = Cat Facts:
 - [meowfacts](https://github.com/wh-iterabb-it/meowfacts)
+
+## Netlify build
+- [YouTube tutorial](https://www.youtube.com/watch?v=4992d7KQz0k)
+- [deployed page](https://master--peppy-eclair-b9d0b2.netlify.app/)
