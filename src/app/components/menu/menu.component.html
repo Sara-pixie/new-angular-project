@@ -1,0 +1,17 @@
+<div class="navbar">
+  <mat-icon class="main-icon" aria-hidden="true" fontIcon="pets"></mat-icon>
+  <span class="main-title">{{ "MENU_ITEMS.TITLE" | translate }}</span>
+  <ul>
+    <li class="listElement" [id]="'listElement_'+index" [ngClass]="item.cssClass" *ngFor="let item of menuItems; let index = index" (click)="onItemClick(item)">
+      <div>
+        <span class="text">{{ item.name | translate }}</span>
+        <span class="icon">
+          <mat-icon aria-hidden="false" [fontIcon]="item.fontIcon"></mat-icon>
+        </span>
+      </div>
+    </li>
+    <div class="indicator" #indicator></div>
+  </ul>
+  <a class="repo-link" target="_blank" rel="noopener noreferrer"
+    href="https://github.com/Sara-pixie/new-angular-project">GitHub</a>
+</div>

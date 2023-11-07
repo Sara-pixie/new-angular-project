@@ -1,4 +1,8 @@
 {
+  "MENU_ITEMS": {
+    "TITLE": "MENU",
+    "HOME": "HOME"
+  },
   "PAGES": {
     "MAIN": {
       "TITLE": "Welcome!"

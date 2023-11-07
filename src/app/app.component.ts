@@ -1,10 +1,16 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+import { MenuComponent } from './components/menu/menu.component';
 
 @Component({
     selector: 'app-root',
-    template: `<router-outlet></router-outlet>`,
+    template: `
+    <app-menu/>
+    <div style="margin-left: 70px;">
+      <router-outlet></router-outlet>
+    </div>
+    `,
     standalone: true,
-    imports: [RouterOutlet]
+    imports: [RouterOutlet, MenuComponent]
 })
 export class AppComponent { }
