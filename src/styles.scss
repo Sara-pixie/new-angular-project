@@ -4,5 +4,75 @@ $primary-color-fade: rgba(128, 0, 128, .5);
 $white: #fff;
 $black: #111;
 
+$warning: #fd5555;
+$success: #26d734;
+$notice: #4abdf1;
+$warning-strong: crimson;
+$success-strong: #026502;
+$notice-strong: #2c2ced;
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+mat-snack-bar-container {
+  &.error-message {
+    & > div {
+      background-color: $warning !important;
+      padding: 10px 20px;
+      simple-snack-bar {
+        gap: 30px;
+        div[matsnackbarlabel] {
+          color: $white !important;
+          font-size: 20px !important;
+        }
+        div[matsnackbaractions] {
+          button {
+            background: $warning-strong !important;
+            color: $white !important;
+            padding: 10px 20px;
+          }
+        }
+      }
+    }
+  }
+  &.success-message {
+    & > div {
+      background-color: $success !important;
+      padding: 10px 20px;
+      simple-snack-bar {
+        gap: 30px;
+        div[matsnackbarlabel] {
+          color: $black !important;
+          font-size: 20px !important;
+        }
+        div[matsnackbaractions] {
+          button {
+            background: $success-strong !important;
+            color: $white !important;
+            padding: 10px 20px;
+          }
+        }
+      }
+    }
+  }
+  &.notice-message {
+    & > div {
+      background-color: $notice !important;
+      padding: 10px 20px;
+      simple-snack-bar {
+        gap: 30px;
+        div[matsnackbarlabel] {
+          color: $black !important;
+          font-size: 20px !important;
+        }
+        div[matsnackbaractions] {
+          button {
+            background: $notice-strong !important;
+            color: $white !important;
+            padding: 10px 20px;
+          }
+        }
+      }
+    }
+  }
+}

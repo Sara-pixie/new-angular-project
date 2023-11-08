@@ -7,6 +7,7 @@ import { provideRouter, withComponentInputBinding } from '@angular/router';
 import { ROUTES } from './app/app.routes';
 import { TranslateLoader, TranslateModule, TranslateModuleConfig } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -25,6 +26,7 @@ const MODULES = [
   BrowserModule,
   HttpClientModule,
   TranslateModule.forRoot(translateModuleConfig),
+  MatSnackBarModule,
 ];
 
 bootstrapApplication(AppComponent, {

@@ -2,9 +2,27 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, Subject, catchError, map, throwError, timeout } from 'rxjs';
 import { ApiConfig, backendApi } from 'src/assets/config/api-config';
+import { MatSnackBar } from '@angular/material/snack-bar';
+import { TranslateService } from '@ngx-translate/core';
 
 export interface PathParams {
   [key: string]: any;
+}
+export enum SnackBarVerticalPosition {
+  TOP = 'top',
+  BOTTOM = 'bottom',
+}
+export enum SnackBarHorizontalPosition {
+  START = 'start',
+  CENTER = 'center',
+  END = 'end',
+  LEFT = 'left',
+  RIGHT = 'right',
+}
+export enum SnackBarClasses {
+  ERROR = "error-message",
+  SUCCESS = "success-message",
+  NOTICE = "notice-message",
 }
 
 @Injectable({
@@ -13,7 +31,11 @@ export interface PathParams {
 export class ApiService {
   onError$ = new Subject();
 
-  constructor(private _http: HttpClient) {}
+  constructor(
+    private _http: HttpClient,
+    private _snackBar: MatSnackBar,
+    private translate: TranslateService,
+  ) {}
 
   request<T>(
     apiName: string,
@@ -101,6 +123,19 @@ export class ApiService {
   private _handleError(error: any) {
     console.error(error);
     this.onError$.next(error);
+    this._showErrorMessage(error);
     return throwError(error);
+  }
+
+  private _showErrorMessage(error: any) {
+    var errorDurationInSeconds: number = 5;
+    this._snackBar.open(this.translate.instant('GENERAL_ERROR_MESSAGE'),
+    this.translate.instant('ERROR_MESSAGE_CLOSE'),
+    {
+      duration: errorDurationInSeconds * 1000,
+      horizontalPosition: SnackBarHorizontalPosition.RIGHT,
+      verticalPosition: SnackBarVerticalPosition.TOP,
+      panelClass: SnackBarClasses.ERROR,
+    });
   }
 }

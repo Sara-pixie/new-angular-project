@@ -7,5 +7,7 @@
     "MAIN": {
       "TITLE": "Cat's Book Nook"
     }
-  }
+  },
+  "GENERAL_ERROR_MESSAGE": "An error has occured!",
+  "ERROR_MESSAGE_CLOSE": "Dismiss"
 }
