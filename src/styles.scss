@@ -14,6 +14,16 @@ $notice-strong: #2c2ced;
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
+.page-container {
+  min-height: 100vh !important;
+  &.cat_one_bg {
+    background-image: url("./assets/images/cat_1.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+}
+
 mat-snack-bar-container {
   &.error-message {
     & > div {
