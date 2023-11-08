@@ -5,7 +5,9 @@
   },
   "PAGES": {
     "MAIN": {
-      "TITLE": "Cat's Book Nook"
+      "TITLE": "Cat's Book Nook",
+      "SUBTITLE": "Welcome to Cat's Book Nook",
+      "MENU_PROMPT": "Browse our mewnu\nto get started!"
     }
   },
   "GENERAL_ERROR_MESSAGE": "An error has occured!",
