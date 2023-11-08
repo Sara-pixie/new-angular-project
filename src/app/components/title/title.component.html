@@ -1,3 +1,3 @@
 <div #titleElementRef class="title-container">
-  <div class="title">{{ title | translate }}</div>
+  <h1 class="title" [ngClass]="{'remove-underline': removeUnderline}">{{ title | translate }}</h1>
 </div>

@@ -18,11 +18,11 @@
     text-shadow: -1px 1px var(--text-color), 3px 3px var(--text-color), 3px 0 var(--text-color), 1px -1px var(--text-color);
     mix-blend-mode: normal;
     transition: all var(--animation-speed) ease var(--animation-delay);
-    font-size: 80px;
-    line-height: 100px;
-    font-weight: 700;
     text-align: center;
     word-break: break-word;
+    &.remove-underline {
+      margin-bottom: 0;
+    }
   }
   &.fill {
     background-position: left bottom;

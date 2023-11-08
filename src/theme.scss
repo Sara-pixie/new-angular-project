@@ -1,0 +1,21 @@
+@import '@angular/material/theming';
+
+// Include the common styles for Angular Material. We include this here so that you only
+// have to load a single css file for Angular Material in your app.
+// Be sure that you only ever include this mixin once!
+@include mat-core();
+
+// Create the new typography
+$custom-typography: mat-typography-config(
+  $headline: mat-typography-level(80px, 100px, 700),
+  $title: mat-typography-level(60px, 62px, 700),
+  $subheading-2: mat-typography-level(56px, 60px, 400),
+  $subheading-1: mat-typography-level(42px, 45px, 400),
+  $body-2: mat-typography-level(16px, 20px, 400),
+  $body-1: mat-typography-level(14px, 20px, 400),
+); // h5 & h6 aren't very useful, also what's their assigned mat name?
+
+// Include theme styles for core and each component used in your app.
+// Alternatively, you can import and @include the theme mixins for each component
+// that you are using.
+@include angular-material-typography($custom-typography);
