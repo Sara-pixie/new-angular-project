@@ -16,6 +16,13 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .page-container {
   min-height: 100vh !important;
+  &:has(> app-title, > .page-content) {
+    display: flex;
+    flex-direction: column;
+    .page-content {
+      flex-grow: 1;
+    }
+  }
   &.cat_one_bg {
     background-image: url("./assets/images/cat_1.jpg");
     background-size: contain;
