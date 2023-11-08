@@ -2,6 +2,46 @@
 
 .page-container {
   .page-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: nowrap;
+    text-align: center;
+    .menu-tip {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-content: center;
+      justify-content: space-evenly;
+      align-items: center;
+      .arrow {
+        flex-grow: 1;
+        mat-icon {
+          font-size: 90px;
+          font-weight: 700;
+          position: relative;
+          left: -20%;
+          animation-name: swing-left-right;
+          animation-duration: 4s;
+          animation-iteration-count: infinite;
+        }
+      }
+      h1 {
+        margin-right: 2rem;
+      }
+    }
+  }
+}
 
+@keyframes swing-left-right {
+  0% {
+    left: -20%;
+  }
+  50% {
+    left: 20%;
+  }
+  100% {
+    left: -20%;
   }
 }

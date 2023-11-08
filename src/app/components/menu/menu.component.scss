@@ -5,9 +5,9 @@
   --icon-size: 70px;
   --menu-background: #{$primary-color};
   --border-radius: 10px;
-  --indicator-color: #0ed535;
+  --indicator-color: #{$secondary-color};
 
-  position: absolute;
+  position: fixed;
   overflow-x: visible;
   z-index: 10;
   width: var(--icon-size);

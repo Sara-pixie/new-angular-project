@@ -1,6 +1,8 @@
 // VARIABLES
 $primary-color: rgba(128, 0, 128, 1);
 $primary-color-fade: rgba(128, 0, 128, .5);
+$secondary-color: rgba(14, 213, 53, 1);
+$secondary-color-fade: rgba(14, 213, 53, .5);
 
 $white: #fff;
 $black: #111;
@@ -16,6 +18,16 @@ $notice-strong: #2c2ced;
 body {
   margin: 0;
 }
+.primary {
+  color: $primary-color;
+}
+.secondary {
+  color: $secondary-color;
+}
+.secondary-text {
+  color: $secondary-color;
+  text-shadow: -1px 1px $black, 1px 1px $black, 1px 0 $black, 1px -1px $black;
+}
 
 // BASIC PAGE
 .page-container {
@@ -29,11 +41,29 @@ body {
     }
   }
   &.cat_one_bg {
-    background-image: url("./assets/images/cat_1.jpg");
-    background-size: contain;
-    background-repeat: no-repeat;
-    background-position: center;
+    &:before {
+      content: '';
+      display: block;
+      position: absolute;
+      width: -webkit-fill-available;
+      height: -webkit-fill-available;
+      opacity: 0.6;
+      z-index: -1;
+      background-image: url("./assets/images/cat_1.jpg");
+      background-repeat: no-repeat;
+      background-repeat-y: repeat;
+      background-position: center;
+      background-size: contain;
+    }
   }
+}
+
+// MAT-ICONS
+mat-icon {
+  width: auto;
+  height: auto;
+  font-size: inherit;
+  font-weight: inherit;
 }
 
 // NOTIFICATIONS
