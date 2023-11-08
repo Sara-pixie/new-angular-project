@@ -1,3 +1,4 @@
+// VARIABLES
 $primary-color: rgba(128, 0, 128, 1);
 $primary-color-fade: rgba(128, 0, 128, .5);
 
@@ -11,9 +12,12 @@ $warning-strong: crimson;
 $success-strong: #026502;
 $notice-strong: #2c2ced;
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+// BASIC
+body {
+  margin: 0;
+}
 
+// BASIC PAGE
 .page-container {
   min-height: 100vh !important;
   &:has(> app-title, > .page-content) {
@@ -21,6 +25,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     flex-direction: column;
     .page-content {
       flex-grow: 1;
+      padding: 20px;
     }
   }
   &.cat_one_bg {
@@ -31,6 +36,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   }
 }
 
+// NOTIFICATIONS
 mat-snack-bar-container {
   &.error-message {
     & > div {
