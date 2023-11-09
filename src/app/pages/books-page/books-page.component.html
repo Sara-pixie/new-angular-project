@@ -1,5 +1,18 @@
 <div class="page-container cat_one_bg">
   <app-title [title]="pageTitle"/>
   <div class="page-content">
+    <div class="book-list glass-effect">
+      <mat-paginator #paginator
+        class="book-list-paginator"
+        (page)="handlePageEvent($event)"
+        [length]="allElements"
+        [pageSize]="elementsPerPage"
+        [disabled]="!books.length"
+        [showFirstLastButtons]="true"
+        [hidePageSize]="false"
+        [pageIndex]="pageIndex"
+        aria-label="Select page">
+      </mat-paginator>
+    </div>
   </div>
 </div>

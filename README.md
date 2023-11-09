@@ -21,8 +21,9 @@ See [this commit](https://github.com/Sara-pixie/new-angular-project/commit/b5d17
 
 ## Public API
 - [Options](https://github.com/public-apis/public-apis)
-<br><br>Choosen theme = Cat Facts:
+<br><br>Choosen theme = Books Search with Cat Facts on home page:
 - [meowfacts](https://github.com/wh-iterabb-it/meowfacts)
+- [Google Books API](https://developers.google.com/books/docs/v1/reference/volumes)
 
 ## Netlify build
 - [YouTube tutorial](https://www.youtube.com/watch?v=4992d7KQz0k)
