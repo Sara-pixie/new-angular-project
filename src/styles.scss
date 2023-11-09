@@ -26,15 +26,15 @@ $notice-strong: #2c2ced;
 // MIXINS
 @mixin fancy-scrollbar() {
   &::-webkit-scrollbar {
-      width: 10px;
-      height: 10px;
+      width: 8px;
+      height: 8px;
   }
   &::-webkit-scrollbar-track {
-      border-radius: 10px;
+      border-radius: 8px;
       background-color: rgba($color: $secondary-color, $alpha: 0.3);
   }
   &::-webkit-scrollbar-thumb {
-      border-radius: 10px;
+      border-radius: 8px;
       background-color: rgba($color: $secondary-color, $alpha: 0.6);
   }
 }

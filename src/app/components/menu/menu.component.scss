@@ -2,7 +2,7 @@
 
 .navbar {
   --background-color: #{$white};
-  --icon-size: 70px;
+  --icon-size: 56px;
   --menu-background: #{$primary-color};
   --border-radius: 10px;
   --indicator-color: #{$secondary-color};
@@ -20,7 +20,7 @@
   border-top-right-radius: var(--border-radius);
   border-bottom-right-radius: var(--border-radius);
   .main-icon {
-    font-size: 45px;
+    font-size: 38px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,7 +41,7 @@
   }
   .repo-link {
     color: $white;
-    padding: 10px;
+    padding: 5px;
   }
   ul {
     flex-grow: 1;
@@ -69,9 +69,9 @@
           color: var(--background-color);
           cursor: pointer;
           mat-icon {
-            font-size: 54px;
-            margin-left: 8px;
-            padding-top: 17px;
+            font-size: 43px;
+            margin-left: 9px;
+            padding-top: 10px;
             height: var(--icon-size);
             width: var(--icon-size);
           }
@@ -107,14 +107,14 @@
       height: var(--icon-size);
       background-color: var(--indicator-color);
       border-radius: 50%;
-      border: 6px solid var(--background-color);
+      border: 7px solid var(--background-color);
       box-shadow: 4px 2px 3px 0px $primary-color;
       transition: 0.5s;
       &::before {
         content: "";
         position: absolute;
-        bottom: -15px;
-        left: 0px;
+        bottom: -12px;
+        left: -9px;
         width: 20px;
         height: 20px;
         background-color: transparent;
@@ -124,8 +124,8 @@
       &::after {
         content: "";
         position: absolute;
-        top: -15px;
-        left: 0px;
+        top: -12px;
+        left: -9px;
         width: 20px;
         height: 20px;
         background-color: transparent;

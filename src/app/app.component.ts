@@ -6,7 +6,7 @@ import { MenuComponent } from './components/menu/menu.component';
     selector: 'app-root',
     template: `
     <app-menu/>
-    <div style="margin-left: 70px;">
+    <div style="margin-left: 56px;">
       <router-outlet></router-outlet>
     </div>
     `,
