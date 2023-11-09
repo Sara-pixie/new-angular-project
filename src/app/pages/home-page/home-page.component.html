@@ -11,7 +11,35 @@
       </div>
     </div>
     <div class="bottom">
-      <h2>here's some cat facts for you!</h2>
+      <div class="carousel-container glass-effect">
+        <mat-carousel
+          [autoplay]="true"
+          [interval]="5000"
+          [proportion]="40"
+          color="primary"
+          maxWidth="auto"
+          [maintainAspectRatio]="true"
+          [slides]="slides.length"
+          [loop]="true"
+          [hideArrows]="false"
+          [hideIndicators]="false"
+          [useKeyboard]="true"
+          orientation="ltr"
+        >
+          <mat-carousel-slide
+            #matCarouselSlide
+            *ngFor="let slide of slides; let i = index"
+            [hideOverlay]="true"
+          >
+            <div class="cat-fact">
+              <span>{{ slide }}</span>
+            </div>
+          </mat-carousel-slide>
+        </mat-carousel>
+      </div>
+      <button class="more-facts-btn" mat-raised-button color="accent" (click)="getMoreFacts()">
+        {{ "PAGES.MAIN.MORE_FACTS" | translate}}
+      </button>
     </div>
   </div>
 </div>

@@ -7,7 +7,8 @@
     "MAIN": {
       "TITLE": "Cat's Book Nook",
       "SUBTITLE": "Welcome to Cat's Book Nook",
-      "MENU_PROMPT": "Browse our mewnu\nto get started!"
+      "MENU_PROMPT": "Browse our mewnu\nto get started!",
+      "MORE_FACTS": "Get More Cat Facts!"
     }
   },
   "GENERAL_ERROR_MESSAGE": "An error has occured!",

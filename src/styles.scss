@@ -1,8 +1,8 @@
 // VARIABLES
-$primary-color: rgba(128, 0, 128, 1);
-$primary-color-fade: rgba(128, 0, 128, .5);
-$secondary-color: rgba(14, 213, 53, 1);
-$secondary-color-fade: rgba(14, 213, 53, .5);
+$primary-color: rgba(123, 31, 162, 1); // from mat theme 'primary'
+$primary-color-fade: rgba(123, 31, 162, .5);
+$secondary-color: rgba(105, 240, 174, 1); // from mat theme 'accent'
+$secondary-color-fade: rgba(105, 240, 174, .5);
 
 $white: #fff;
 $black: #111;
@@ -27,6 +27,11 @@ body {
 .secondary-text {
   color: $secondary-color;
   text-shadow: -1px 1px $black, 1px 1px $black, 1px 0 $black, 1px -1px $black;
+}
+.glass-effect {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
 }
 
 // BASIC PAGE
