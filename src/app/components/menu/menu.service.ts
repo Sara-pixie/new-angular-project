@@ -25,6 +25,11 @@ export class MenuService {
         fontIcon: 'home',
         redirectUrl: '/home',
       },
+      {
+        name: 'MENU_ITEMS.BOOKS',
+        fontIcon: 'import_contacts',
+        redirectUrl: '/books',
+      },
     ];
   }
 

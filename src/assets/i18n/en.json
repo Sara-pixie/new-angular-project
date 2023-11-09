@@ -1,7 +1,8 @@
 {
   "MENU_ITEMS": {
     "TITLE": "MENU",
-    "HOME": "HOME"
+    "HOME": "HOME",
+    "BOOKS": "BOOKS"
   },
   "PAGES": {
     "MAIN": {
@@ -9,6 +10,9 @@
       "SUBTITLE": "Welcome to Cat's Book Nook",
       "MENU_PROMPT": "Browse our mewnu\nto get started!",
       "MORE_FACTS": "Get More Cat Facts!"
+    },
+    "BOOKS": {
+      "TITLE": "Books"
     }
   },
   "GENERAL_ERROR_MESSAGE": "An error has occured!",

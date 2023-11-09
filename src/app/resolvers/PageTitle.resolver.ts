@@ -1,6 +1,7 @@
 import { ResolveFn, ActivatedRouteSnapshot, RouterStateSnapshot } from "@angular/router";
 
 const PageTitlesByURL = new Map()
+  .set('/books', "PAGES.BOOKS.TITLE")
   .set('/home', "PAGES.MAIN.TITLE");
 
 export const PageTitleResolver: ResolveFn<string> =
