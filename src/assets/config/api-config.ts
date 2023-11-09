@@ -23,5 +23,10 @@ export const backendApi: ApiConfig[] = [
     name: 'getCatFacts',
     method: APIMethod.GET,
     url: 'https://meowfacts.herokuapp.com/',
-  }
+  },
+  {
+    name: 'searchBooks',
+    method: APIMethod.GET,
+    url: 'https://openlibrary.org/search.json'
+  },
 ];
