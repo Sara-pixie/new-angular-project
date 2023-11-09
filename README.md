@@ -14,6 +14,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 - [Components](https://material.angular.io/components/categories)
 - [icons](https://fonts.google.com/icons) use `<mat-icon fontIcon="iconName"></mat-icon>`
 - To override material styling (because they make weird headings h1-6) create [new scss file](https://github.com/Sara-pixie/new-angular-project/blob/master/src/theme.scss) and make sure to link it in [`angular.json`](https://github.com/Sara-pixie/new-angular-project/blob/master/angular.json) file under `styles`
+- Added `Material Carousel` see this [folder](https://github.com/Sara-pixie/new-angular-project/tree/master/src/app/components/carousel) for details (the code has been borrowed from another repository and tweaked to fit into Angular 16 project)
 
 ## Public API
 - [Options](https://github.com/public-apis/public-apis)
