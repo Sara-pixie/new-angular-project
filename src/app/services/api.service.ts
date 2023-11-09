@@ -86,11 +86,11 @@ export class ApiService {
       apiConfig.method,
       this._completeUrl(apiConfig.url, pathParams),
       {
-        headers: apiConfig.headers,
-        observe: 'body',
+        headers: apiConfig.noHeaders? undefined : apiConfig.headers,
+        observe: apiConfig.noHeaders? undefined : 'body',
         body: body || {},
         params: queryParams || null,
-        responseType: 'json',
+        responseType: apiConfig.noHeaders? undefined : 'json',
       }
     );
   }

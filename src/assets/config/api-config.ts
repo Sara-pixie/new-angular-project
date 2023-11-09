@@ -16,6 +16,7 @@ export interface ApiConfig {
   url: string;
   headers?: HttpHeaders;
   timeout?: number;
+  noHeaders?: boolean;
 }
 
 export const backendApi: ApiConfig[] = [
@@ -27,6 +28,7 @@ export const backendApi: ApiConfig[] = [
   {
     name: 'searchBooks',
     method: APIMethod.GET,
-    url: 'https://openlibrary.org/search.json'
+    url: 'https://openlibrary.org/search.json',
+    noHeaders: true,
   },
 ];
