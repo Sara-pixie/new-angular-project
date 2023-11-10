@@ -29,4 +29,9 @@ export const backendApi: ApiConfig[] = [
     method: APIMethod.GET,
     url: 'https://www.googleapis.com/books/v1/volumes'
   },
+  {
+    name: 'getBookDetail',
+    method: APIMethod.GET,
+    url: 'https://www.googleapis.com/books/v1/volumes/{volumeId}'
+  },
 ];

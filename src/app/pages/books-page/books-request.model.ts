@@ -14,6 +14,14 @@ export interface SearchBooksRequest {
   startIndex?: number; // Index of the first result to return (starts at 0)
 }
 
+export interface BookDetailRequest {
+  q: string; // querry string
+  volumeId:	string; // ID of volume to retrieve.
+  partner?: string; // Restrict and brand results for partner ID.
+  projection?: SearchBooksProjection; // Restrict information returned to a set of selected fields.
+  source?: string; // String to identify the originator of this request.
+}
+
 
 export enum SearchBooksDownload {
   EPUB = "epub", // All volumes with epub.

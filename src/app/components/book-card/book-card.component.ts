@@ -13,9 +13,9 @@ import { MatChipsModule } from '@angular/material/chips';
 })
 export class BookCardComponent {
   @Input({required: true}) book!: SearchBooksResponseItem;
-  @Output() cardClick: EventEmitter<string> = new EventEmitter();
+  @Output() cardClick: EventEmitter<SearchBooksResponseItem> = new EventEmitter();
 
   onCardClick() {
-    this.cardClick.emit(this.book.id);
+    this.cardClick.emit(this.book);
   }
 }

@@ -15,6 +15,7 @@ import { MatInputModule } from '@angular/material/input';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { SnackBarClasses, SnackBarHorizontalPosition, SnackBarVerticalPosition } from 'src/app/services/api.service';
 import { BookCardComponent } from 'src/app/components/book-card/book-card.component';
+import { Router } from '@angular/router';
 
 @Component({
   standalone: true,
@@ -50,6 +51,7 @@ export class BooksPageComponent implements OnInit{
     private booksService: BooksService,
     private _snackBar: MatSnackBar,
     private translate: TranslateService,
+    private router: Router,
   ) {}
 
   ngOnInit(): void {
@@ -67,8 +69,8 @@ export class BooksPageComponent implements OnInit{
     this._makeRequest(true);
   }
 
-  onBookClick(bookId: string) {
-    console.log("Book card click ID:", bookId);
+  onBookClick(book: SearchBooksResponseItem) {
+    this.router.navigate(['books', 'book-detail', book.volumeInfo.title, book.id]);
   }
 
   private _makeRequest(searchRequest?: boolean) {
@@ -98,7 +100,7 @@ export class BooksPageComponent implements OnInit{
           panelClass: SnackBarClasses.NOTICE,
         });
       }
-      console.log(this.books,'allElements', this.allElements,'numberOfPages',this.numberOfPages);
+      // console.log(this.books,'allElements', this.allElements,'numberOfPages',this.numberOfPages);
     });
   }
 
