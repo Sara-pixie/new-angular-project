@@ -8,6 +8,7 @@ See [this commit](https://github.com/Sara-pixie/new-angular-project/commit/b5d17
 
 ## About Angular 17
 - [Angular 17 Blog](https://blog.angular.io/introducing-angular-v17-4d7033312e4b)
+- [Angular.dev](https://angular.dev/)
 
 ## About Angular 16
 - [Angular Blog](https://blog.angular.io/angular-v16-is-here-4d7a28ec680d)
