@@ -1,4 +1,4 @@
-# New Angular Project
+# New Angular 16 Project
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.9. <br>
 After this commit (10.11.2023) any changes to the platform will be done on main branch where I'll be upgrading the project to `Angular 17`
