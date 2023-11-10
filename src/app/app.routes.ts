@@ -5,7 +5,7 @@ import { BooksPageComponent } from "./pages/books-page/books-page.component";
 import { BookDetailResolver } from "./resolvers/book-details.resolver";
 import { BookDetailPageComponent } from "./pages/book-detail-page/book-detail-page.component";
 
-const pageBaseName = "(A16)Cat's Book Nook | ";
+const pageBaseName = "(A17)Cat's Book Nook | ";
 export const ROUTES: Routes = [
   {
     path: 'home', title: pageBaseName+'Home', component: HomePageComponent,

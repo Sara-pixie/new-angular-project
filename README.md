@@ -1,4 +1,4 @@
-# New Angular Project
+# New Angular 17 Project
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.9. <br>
 After 10.11.2023 the project is upgraded to Angular 17! see [Update Guide](https://update.angular.io/?l=3&v=16.0-17.0)
