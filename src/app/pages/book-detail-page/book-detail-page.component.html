@@ -8,9 +8,10 @@
       </button>
     </div>
     <div class="book-info glass-effect">
-      <div class="img" *ngIf="book.volumeInfo.imageLinks">
+      <a class="img" *ngIf="book.volumeInfo.imageLinks"
+        [href]="book.volumeInfo.imageLinks.thumbnail" target="_blank" rel="noopener noreferrer">
         <img [src]="book.volumeInfo.imageLinks.thumbnail" alt="book thumbnail">
-      </div>
+      </a>
       <div class="info">
         <h3 class="primary-text">{{ book.volumeInfo.title }}</h3>
         <h4 class="secondary-text" *ngIf="book.volumeInfo.subtitle">{{ book.volumeInfo.subtitle }}</h4>
