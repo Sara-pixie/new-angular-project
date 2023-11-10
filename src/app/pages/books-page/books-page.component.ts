@@ -16,7 +16,6 @@ import { MatSnackBar } from '@angular/material/snack-bar';
 import { SnackBarClasses, SnackBarHorizontalPosition, SnackBarVerticalPosition } from 'src/app/services/api.service';
 
 @Component({
-  selector: 'app-books-page',
   standalone: true,
   imports: [
     CommonModule,
