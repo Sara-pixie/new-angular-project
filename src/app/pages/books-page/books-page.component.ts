@@ -2,7 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TitleComponent } from 'src/app/components/title/title.component';
 import { BooksService } from 'src/app/services/books.service';
-import { SearchBooksProjection, SearchBooksRequest } from './books-request.model';
+import { SearchBooksOrderBy, SearchBooksProjection, SearchBooksRequest } from './books-request.model';
 import { SearchBooksResponseItem } from './books-response.model';
 import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 import { MatExpansionModule } from '@angular/material/expansion';
@@ -57,31 +57,36 @@ export class BooksPageComponent implements OnInit{
   }
 
   handlePageEvent(event: PageEvent) {
+    console.log(event)
     this.pageIndex = event.pageIndex;
     this._makeRequest();
   }
 
   onSearch() {
-    this._makeRequest();
+    this.pageIndex = 0;
+    this._makeRequest(true);
   }
 
   onBookClick(bookId: string) {
     console.log("Book card click ID:", bookId);
   }
 
-  private _makeRequest() {
+  private _makeRequest(searchRequest?: boolean) {
     var params: SearchBooksRequest = {
       q: this.searchForm.get('keyword')?.value,
       startIndex: this.elementsPerPage * this.pageIndex,
       maxResults: this.elementsPerPage,
+      orderBy: SearchBooksOrderBy.RELEVANCE,
       projection: SearchBooksProjection.LITE
     }
     this.booksService.getBooksByTitle(params).subscribe(result => {
-      this.allElements = result.totalItems;
-      this.books = result.items;
-      this.numberOfPages = Math.ceil(this.allElements / this.elementsPerPage);
-      console.log(this.books,'allElements', this.allElements,'numberOfPages',this.numberOfPages);
+      this.books = result.items?.length ? result.items : [];
       if(this.books.length) {
+        if(searchRequest)  {
+          // because google books API returns strange totalItems value on subsequent pages
+          this.allElements = result.totalItems;
+          this.numberOfPages = Math.ceil(this.allElements / this.elementsPerPage);
+        }
         this.searchPannelOpen = false;
       } else {
         this._snackBar.open(this.translate.instant("PAGES.BOOKS.SEARCH.NO_BOOKS_FOUND"),
@@ -93,6 +98,7 @@ export class BooksPageComponent implements OnInit{
           panelClass: SnackBarClasses.NOTICE,
         });
       }
+      console.log(this.books,'allElements', this.allElements,'numberOfPages',this.numberOfPages);
     });
   }
 
