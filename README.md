@@ -1,6 +1,9 @@
 # New Angular Project
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.9.
+This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.9. <br>
+After this commit (10.11.2023) any changes to the platform will be done on main branch where I'll be upgrading the project to `Angular 17`
+- [Angular 17 Blog](https://blog.angular.io/introducing-angular-v17-4d7033312e4b)
+- [Update Guide](https://update.angular.io/?l=3&v=16.0-17.0)
 
 #### When adding main pages
 See [this commit](https://github.com/Sara-pixie/new-angular-project/commit/b5d17be7fa59c1565cea739c6b29772fb94b2d50) as example of adding a main page to the platform.
