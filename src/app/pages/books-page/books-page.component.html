@@ -1,7 +1,33 @@
-<div class="page-container cat_one_bg">
+<div class="page-container cat_books_bg">
   <app-title [title]="pageTitle"/>
   <div class="page-content">
-    <div class="book-list glass-effect">
+    <mat-expansion-panel hideToggle
+      [expanded]="searchPannelOpen"
+      (opened)="searchPannelOpen = true"
+      (closed)="searchPannelOpen = false">
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+          {{ "PAGES.BOOKS.SEARCH.TITLE" | translate }}
+          <mat-icon>search</mat-icon>
+        </mat-panel-title>
+      </mat-expansion-panel-header>
+      <div class="search-form" [formGroup]="searchForm">
+        <mat-form-field appearance="outline">
+          <mat-label>{{ "PAGES.BOOKS.SEARCH.FORM.KEYWORD.LABEL" | translate }}</mat-label>
+          <input matInput
+            formControlName="keyword"
+            [placeholder]="'PAGES.BOOKS.SEARCH.FORM.KEYWORD.PLACEHOLDER' | translate">
+        </mat-form-field>
+      </div>
+      <mat-action-row>
+        <button mat-raised-button color="accent"
+          (click)="onSearch()"
+          [disabled]="!searchForm.valid">
+          {{ "PAGES.BOOKS.SEARCH.SEARCH" | translate }}
+        </button>
+      </mat-action-row>
+    </mat-expansion-panel>
+    <div class="book-list glass-effect" *ngIf="books.length">
       <mat-paginator #paginator
         class="book-list-paginator"
         (page)="handlePageEvent($event)"

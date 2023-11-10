@@ -1,11 +1,26 @@
 @import './variables';
 
 :root {
+  // pagination overwrites
   --mat-paginator-container-background-color: #{$primary-color-light};
   --mat-paginator-container-text-color: #{$secondary-color};
   --mat-paginator-container-text-size: 16px;
   --mat-paginator-enabled-icon-color: #{$secondary-color};
   --mat-paginator-disabled-icon-color: #{$secondary-color-fade};
+  // expansion pannel overwrites
+  --mat-expansion-container-background-color: #{$primary-color-light};
+  --mat-expansion-header-text-color: #{$secondary-color};
+  --mat-expansion-header-description-color: #{$secondary-color-light};
+  --mat-expansion-actions-divider-color: #{$secondary-color-fade};
+  --mat-expansion-header-text-size: 28px;
+  // form field overwrites
+  --mat-form-field-container-text-size: 16px;
+  --mat-form-field-container-text-line-height: 18px;
+  --mdc-outlined-text-field-label-text-size: 16px;
+  --mdc-filled-text-field-label-text-size: 16px;
+  --mat-form-field-outlined-label-text-populated-size: 18px;
+  --mdc-outlined-text-field-focus-outline-color: #{$secondary-color};
+  --mdc-outlined-text-field-focus-label-text-color: #{$secondary-color};
 }
 
 // MIXINS
@@ -56,7 +71,7 @@ body {
       padding: 20px;
     }
   }
-  &.cat_one_bg {
+  &[class$="_bg"] {
     &:before {
       content: '';
       display: block;
@@ -65,11 +80,20 @@ body {
       height: -webkit-fill-available;
       opacity: 0.6;
       z-index: -1;
-      background-image: url("./assets/images/cat_1.jpg");
       background-repeat: no-repeat;
       background-repeat-y: repeat;
       background-position: center;
       background-size: contain;
+    }
+  }
+  &.cat_one_bg {
+    &:before {
+      background-image: url("./assets/images/cat_1.jpg");
+    }
+  }
+  &.cat_books_bg {
+    &:before {
+      background-image: url("./assets/images/cat_books.jpg");
     }
   }
 }
@@ -144,4 +168,24 @@ mat-snack-bar-container {
       }
     }
   }
+}
+
+// MAT OVERWRITES
+.mat-expansion-panel-header-title,
+.mat-expansion-panel-header-description {
+  justify-content: space-between;
+  mat-icon {
+    font-size: 30px;
+    height: 30px;
+    width: 30px;
+  }
+}
+.mat-expansion-panel-header.mat-expanded {
+  background: inherit;
+}
+.mat-expansion-panel-body {
+  padding: 16px 24px !important;
+}
+.mat-mdc-form-field {
+  min-width: 250px !important;
 }

@@ -12,7 +12,19 @@
       "MORE_FACTS": "Get More Cat Facts!"
     },
     "BOOKS": {
-      "TITLE": "Books"
+      "TITLE": "Books",
+      "SEARCH": {
+        "TITLE": "Search Books",
+        "FORM": {
+          "KEYWORD": {
+            "LABEL": "Search by book title",
+            "PLACEHOLDER": "Input book title"
+          }
+        },
+        "SEARCH": "Search",
+        "NO_BOOKS_FOUND": "No books matching search filters have been found",
+        "CLOSE_BTN": "Dismiss"
+      }
     }
   },
   "GENERAL_ERROR_MESSAGE": "An error has occured!",
