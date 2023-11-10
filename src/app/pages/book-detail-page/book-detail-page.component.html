@@ -1,1 +1,51 @@
-<p>book-detail-page works!</p>
+<div class="page-container cat_books_bg">
+  <app-title [title]="book.volumeInfo.title"/>
+  <div class="page-content">
+    <div class="navigation">
+      <button class="back-btn" mat-raised-button color="accent" (click)="onBack()">
+        {{ "PAGES.BOOKS.BACK" | translate}}
+        <mat-icon>keyboard_arrow_left</mat-icon>
+      </button>
+    </div>
+    <div class="book-info glass-effect">
+      <div class="img" *ngIf="book.volumeInfo.imageLinks">
+        <img [src]="book.volumeInfo.imageLinks.thumbnail" alt="book thumbnail">
+      </div>
+      <div class="info">
+        <h3 class="primary-text">{{ book.volumeInfo.title }}</h3>
+        <h4 class="secondary-text" *ngIf="book.volumeInfo.subtitle">{{ book.volumeInfo.subtitle }}</h4>
+        <div class="authors" *ngIf="book.volumeInfo?.authors?.length">
+          <span><b>Authors:</b></span>
+          <mat-chip-listbox aria-label="book authors">
+            <mat-chip *ngFor="let author of book.volumeInfo.authors">
+              {{ author }}
+            </mat-chip>
+          </mat-chip-listbox>
+        </div>
+        <div class="categories" *ngIf="book.volumeInfo?.categories?.length">
+          <span><b>Categories:</b></span>
+          <mat-chip-listbox aria-label="book authors">
+            <mat-chip *ngFor="let category of book.volumeInfo.categories">
+              {{ category }}
+            </mat-chip>
+          </mat-chip-listbox>
+        </div>
+        <mat-divider></mat-divider>
+        <p>{{ book.volumeInfo.description }}</p>
+        <mat-divider></mat-divider>
+        <p>Publisher: {{ book.volumeInfo.publisher || '/' }}; date: {{ book.volumeInfo.publishedDate || '/' }}</p>
+        <mat-chip-listbox aria-label="book links">
+          <mat-chip *ngIf="book.volumeInfo?.infoLink">
+            <a [href]="book.volumeInfo.infoLink" target="_blank" rel="noopener noreferrer">Info</a>
+          </mat-chip>
+          <mat-chip *ngIf="book.volumeInfo?.previewLink">
+            <a [href]="book.volumeInfo.previewLink" target="_blank" rel="noopener noreferrer">Preview</a>
+          </mat-chip>
+          <mat-chip *ngIf="book.volumeInfo?.canonicalVolumeLink">
+            <a [href]="book.volumeInfo.canonicalVolumeLink" target="_blank" rel="noopener noreferrer">Cannonical Volume</a>
+          </mat-chip>
+        </mat-chip-listbox>
+      </div>
+    </div>
+  </div>
+</div>

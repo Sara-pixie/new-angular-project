@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TitleComponent } from 'src/app/components/title/title.component';
-import { BooksService } from 'src/app/services/books.service';
+import { BooksService, STORAGE_BOOK_SEARCH_INFO, StorageBookSearchInfo } from 'src/app/services/books.service';
 import { SearchBooksOrderBy, SearchBooksProjection, SearchBooksRequest } from './books-request.model';
 import { SearchBooksResponseItem } from './books-response.model';
 import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
@@ -56,10 +56,23 @@ export class BooksPageComponent implements OnInit{
 
   ngOnInit(): void {
     this._initSearchForm();
+    if(this.booksService.getBookSearchInfo()) {
+      var data: StorageBookSearchInfo = this.booksService.getBookSearchInfo()!;
+      if(data.books) {
+        this.books = data.books;
+        this.searchPannelOpen = false;
+        this.pageIndex = data.paginationData.pageIndex;
+        this.allElements = data.paginationData.allElements;
+        this.numberOfPages = data.paginationData.numberOfPages;
+        if(data.searchFormValues) {
+          this.searchForm.setValue(data.searchFormValues);
+        }
+      }
+      this.booksService.removeBookSearchInfo();
+    }
   }
 
   handlePageEvent(event: PageEvent) {
-    console.log(event)
     this.pageIndex = event.pageIndex;
     this._makeRequest();
   }
@@ -69,8 +82,18 @@ export class BooksPageComponent implements OnInit{
     this._makeRequest(true);
   }
 
-  onBookClick(book: SearchBooksResponseItem) {
-    this.router.navigate(['books', 'book-detail', book.volumeInfo.title, book.id]);
+  onBookClick(bookId: string) {
+    var data: StorageBookSearchInfo = {
+      paginationData: {
+        allElements: this.allElements,
+        numberOfPages: this.numberOfPages,
+        pageIndex: this.pageIndex,
+      },
+      searchFormValues: this.searchForm.value,
+      books: this.books,
+    }
+    this.booksService.setBookSearchInfo(data);
+    this.router.navigate(['books', 'book-detail', bookId]);
   }
 
   private _makeRequest(searchRequest?: boolean) {
@@ -79,7 +102,7 @@ export class BooksPageComponent implements OnInit{
       startIndex: this.elementsPerPage * this.pageIndex,
       maxResults: this.elementsPerPage,
       orderBy: SearchBooksOrderBy.RELEVANCE,
-      projection: SearchBooksProjection.LITE
+      projection: SearchBooksProjection.FULL
     }
     this.booksService.getBooksByTitle(params).subscribe(result => {
       this.books = result.items?.length ? result.items : [];

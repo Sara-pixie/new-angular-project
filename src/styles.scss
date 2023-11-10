@@ -49,6 +49,10 @@ body {
 .primary {
   color: $primary-color;
 }
+.primary-text {
+  color: $primary-color;
+  text-shadow: -1px 1px $black, 1px 1px $black, 1px 0 $black, 1px -1px $black;
+}
 .secondary {
   color: $secondary-color;
 }

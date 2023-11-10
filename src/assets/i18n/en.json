@@ -24,7 +24,8 @@
         "SEARCH": "Search",
         "NO_BOOKS_FOUND": "No books matching search filters have been found",
         "CLOSE_BTN": "Dismiss"
-      }
+      },
+      "BACK": "Go Back"
     }
   },
   "GENERAL_ERROR_MESSAGE": "An error has occured!",

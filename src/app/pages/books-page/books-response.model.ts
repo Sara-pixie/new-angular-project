@@ -41,6 +41,7 @@ export interface BookAvailability {
 }
 export interface BookValumeInfo {
   title: string;
+  subtitle?: string;
   authors: string[];
   publisher: string;
   publishedDate: string; //"2000-09"

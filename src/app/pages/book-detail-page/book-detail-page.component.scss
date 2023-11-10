@@ -1,0 +1,55 @@
+@import '../../../variables';
+
+.page-content {
+  .navigation {
+    width: 100%;
+    padding: 10px 0 10px 20px;
+  }
+  .book-info {
+    margin: 10px 20px;
+    padding: 10px 20px;
+    border: 1px solid $secondary-color-fade;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    align-content: center;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 10px;
+    .img {
+      display: flex;
+      justify-content: center;
+    }
+    .info {
+      flex-grow: 1;
+      .mdc-evolution-chip-set {
+        display: inline-flex;
+        margin-left: 10px;
+      }
+      p {
+        background: rgba($color: $white, $alpha: .5);
+        padding: 10px;
+        border-radius: 10px;
+        margin-bottom: 0;
+      }
+      a:link, a:visited, a:hover, a:active {
+        color: $black;
+      }
+    }
+  }
+}
+
+@media (max-width: 600px) {
+  .book-info {
+    flex-wrap: wrap !important;
+    .img {
+      width: 100%;
+    }
+    .info {
+      h3 {
+        text-align: center;
+      }
+    }
+  }
+}

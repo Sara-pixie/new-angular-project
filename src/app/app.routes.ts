@@ -19,7 +19,7 @@ export const ROUTES: Routes = [
         resolve: { pageTitle: PageTitleResolver },
       },
       {
-        path: 'book-detail/:title/:id', component: BookDetailPageComponent,
+        path: 'book-detail/:id', component: BookDetailPageComponent,
         resolve: { book: BookDetailResolver },
       },
     ]
