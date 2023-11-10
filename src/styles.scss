@@ -86,7 +86,7 @@ body {
     &:before {
       content: '';
       display: block;
-      position: absolute;
+      position: fixed;
       width: -webkit-fill-available;
       height: -webkit-fill-available;
       opacity: 0.6;
