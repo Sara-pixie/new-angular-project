@@ -2,6 +2,11 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.2.9. <br>
 After 10.11.2023 the project is upgraded to Angular 17! see [Update Guide](https://update.angular.io/?l=3&v=16.0-17.0) <br>
+- `ng update @angular/core@17 @angular/cli@17`
+- `ng update @angular/material` & `ng update @angular/cdk` + any other commands listed when you run `ng update`
+- if modifying Angular Material theme/typography make sure to update those files [like this](https://github.com/Sara-pixie/new-angular-project/commit/5a5c5b0266e725894a1312d47b780820f1e97cfb)
+- run `ng serve` to see if anything else breaks
+
 Angular 16 code is staying on [this branch](https://github.com/Sara-pixie/new-angular-project/tree/angular-16) and won't be updated anymore.
 
 #### When adding main pages
@@ -27,7 +32,8 @@ See [this commit](https://github.com/Sara-pixie/new-angular-project/commit/b5d17
 
 ## Public API
 - [Options](https://github.com/public-apis/public-apis)
-<br><br>Choosen theme = Books Search with Cat Facts on home page:
+
+Choosen theme = Books Search with Cat Facts on home page:
 - [meowfacts](https://github.com/wh-iterabb-it/meowfacts)
 - [Google Books API](https://developers.google.com/books/docs/v1/reference/volumes)
 
