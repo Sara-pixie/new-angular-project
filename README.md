@@ -22,7 +22,7 @@ See [this commit](https://github.com/Sara-pixie/new-angular-project/commit/b5d17
 - [Getting Started](https://material.angular.io/guide/getting-started)
 - [Components](https://material.angular.io/components/categories)
 - [icons](https://fonts.google.com/icons) use `<mat-icon fontIcon="iconName"></mat-icon>`
-- To override material styling (because they make weird headings h1-6) create [new scss file](https://github.com/Sara-pixie/new-angular-project/blob/master/src/theme.scss) and make sure to link it in [`angular.json`](https://github.com/Sara-pixie/new-angular-project/blob/master/angular.json) file under `styles`
+- To override material styling (because they make weird headings h1-6) create [new scss file](https://github.com/Sara-pixie/new-angular-project/blob/master/src/theme.scss) and make sure to link it in [`angular.json`](https://github.com/Sara-pixie/new-angular-project/blob/master/angular.json) file under `styles` **CHANGES FROM 16 to 17** see [this commit](https://github.com/Sara-pixie/new-angular-project/commit/5a5c5b0266e725894a1312d47b780820f1e97cfb)!
 - Added `Material Carousel` see this [folder](https://github.com/Sara-pixie/new-angular-project/tree/master/src/app/components/carousel) for details (the code has been borrowed from another repository and tweaked to fit into Angular 16 project)
 
 ## Public API
