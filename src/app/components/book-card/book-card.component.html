@@ -1,0 +1,18 @@
+<div class="book-card hover-glass-effect" (click)="onCardClick()">
+  <div class="img" *ngIf="book.volumeInfo.imageLinks">
+    <img [src]="book.volumeInfo.imageLinks.smallThumbnail" alt="book thumbnail">
+  </div>
+  <div class="info">
+    <h3 class="primary">{{ book.volumeInfo.title }}</h3>
+    <div>
+      <span><b>Authors:</b></span>
+      <mat-chip-listbox aria-label="book authors">
+        <mat-chip *ngFor="let author of book.volumeInfo.authors">
+          {{ author }}
+        </mat-chip>
+      </mat-chip-listbox>
+    </div>
+    <mat-divider></mat-divider>
+    <p>{{ book.volumeInfo.description }}</p>
+  </div>
+</div>

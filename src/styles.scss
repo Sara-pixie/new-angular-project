@@ -21,6 +21,8 @@
   --mat-form-field-outlined-label-text-populated-size: 18px;
   --mdc-outlined-text-field-focus-outline-color: #{$secondary-color};
   --mdc-outlined-text-field-focus-label-text-color: #{$secondary-color};
+  // mat divider overwrites
+  --mat-divider-color: #{$secondary-color-fade};
 }
 
 // MIXINS
@@ -55,6 +57,11 @@ body {
   text-shadow: -1px 1px $black, 1px 1px $black, 1px 0 $black, 1px -1px $black;
 }
 .glass-effect {
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+}
+.hover-glass-effect:hover {
   backdrop-filter: blur(10px);
   background: rgba(255, 255, 255, 0.1);
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
@@ -188,4 +195,14 @@ mat-snack-bar-container {
 }
 .mat-mdc-form-field {
   min-width: 250px !important;
+}
+.mat-divider {
+  --mat-divider-width: 2px !important;
+  margin: 5px 0 !important;
+}
+.mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled) {
+  background-color: $secondary-color !important;
+}
+.mat-mdc-standard-chip:not(.mdc-evolution-chip--disabled) .mdc-evolution-chip__text-label {
+  color: $black !important;
 }

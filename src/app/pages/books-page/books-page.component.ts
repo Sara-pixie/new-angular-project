@@ -14,6 +14,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { SnackBarClasses, SnackBarHorizontalPosition, SnackBarVerticalPosition } from 'src/app/services/api.service';
+import { BookCardComponent } from 'src/app/components/book-card/book-card.component';
 
 @Component({
   standalone: true,
@@ -27,7 +28,8 @@ import { SnackBarClasses, SnackBarHorizontalPosition, SnackBarVerticalPosition }
     TranslateModule,
     MatButtonModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    BookCardComponent,
   ],
   templateUrl: './books-page.component.html',
   styleUrls: ['./books-page.component.scss']
@@ -61,6 +63,10 @@ export class BooksPageComponent implements OnInit{
 
   onSearch() {
     this._makeRequest();
+  }
+
+  onBookClick(bookId: string) {
+    console.log("Book card click ID:", bookId);
   }
 
   private _makeRequest() {

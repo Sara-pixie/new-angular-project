@@ -28,6 +28,7 @@
       </mat-action-row>
     </mat-expansion-panel>
     <div class="book-list glass-effect" *ngIf="books.length">
+      <app-book-card *ngFor="let book of books" [book]="book" (cardClick)="onBookClick($event)"/>
       <mat-paginator #paginator
         class="book-list-paginator"
         (page)="handlePageEvent($event)"
