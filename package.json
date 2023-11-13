@@ -6,7 +6,11 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "dev:ssr": "ng run new-angular-project:serve-ssr",
+    "serve:ssr": "node dist/new-angular-project/server/main.js",
+    "build:ssr": "ng build && ng run new-angular-project:server",
+    "prerender": "ng run new-angular-project:prerender"
   },
   "private": true,
   "dependencies": {
@@ -19,9 +23,12 @@
     "@angular/material": "^17.0.0",
     "@angular/platform-browser": "^17.0.2",
     "@angular/platform-browser-dynamic": "^17.0.2",
+    "@angular/platform-server": "^17.0.2",
     "@angular/router": "^17.0.2",
+    "@angular/ssr": "^17.0.0",
     "@ngx-translate/core": "^15.0.0",
     "@ngx-translate/http-loader": "^8.0.0",
+    "express": "^4.18.2",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.2"
@@ -30,7 +37,9 @@
     "@angular-devkit/build-angular": "^17.0.0",
     "@angular/cli": "^17.0.0",
     "@angular/compiler-cli": "^17.0.2",
+    "@types/express": "^4.17.17",
     "@types/jasmine": "~4.3.0",
+    "@types/node": "^18.18.0",
     "jasmine-core": "~4.6.0",
     "karma": "~6.4.0",
     "karma-chrome-launcher": "~3.2.0",
