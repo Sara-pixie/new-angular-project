@@ -18,13 +18,16 @@
       .arrow {
         flex-grow: 1;
         mat-icon {
-          font-size: 90px;
+          font-size: 70px;
           font-weight: 700;
           position: relative;
           left: -20%;
           animation-name: swing-left-right;
           animation-duration: 4s;
           animation-iteration-count: infinite;
+          height: 63px;
+          width: 63px;
+          transform: rotate(180deg);
         }
       }
       h1 {
