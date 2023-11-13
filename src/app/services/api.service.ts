@@ -124,7 +124,7 @@ export class ApiService {
     console.error(error);
     this.onError$.next(error);
     this._showErrorMessage(error);
-    return throwError(error);
+    return throwError(() => new Error(error));
   }
 
   private _showErrorMessage(error: any) {

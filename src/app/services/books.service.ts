@@ -28,14 +28,25 @@ export class BooksService {
   getBooksByTitle(params: SearchBooksRequest): Observable<SearchBooksResponse> {
     return this.api.request('searchBooks', null, params);
   }
+  getBookById(volumeId: string): Observable<SearchBooksResponseItem> {
+    return this.api.request('getBookDetail', null, null, {volumeId});
+  }
 
   setBookSearchInfo(info: StorageBookSearchInfo) {
     this.storageBookSearchInfo = info;
+    localStorage.setItem(STORAGE_BOOK_SEARCH_INFO, JSON.stringify(this.storageBookSearchInfo));
   }
   getBookSearchInfo(): StorageBookSearchInfo|undefined {
+    if(!this.storageBookSearchInfo) {
+      const storedData = localStorage.getItem(STORAGE_BOOK_SEARCH_INFO);
+      if(storedData) {
+        this.storageBookSearchInfo = JSON.parse(storedData);
+      }
+    }
     return this.storageBookSearchInfo;
   }
   removeBookSearchInfo() {
     this.storageBookSearchInfo = undefined;
+    localStorage.removeItem(STORAGE_BOOK_SEARCH_INFO);
   }
 }

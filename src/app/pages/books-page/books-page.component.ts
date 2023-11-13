@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { TitleComponent } from 'src/app/components/title/title.component';
-import { BooksService, STORAGE_BOOK_SEARCH_INFO, StorageBookSearchInfo } from 'src/app/services/books.service';
+import { BooksService, StorageBookSearchInfo } from 'src/app/services/books.service';
 import { SearchBooksOrderBy, SearchBooksProjection, SearchBooksRequest } from './books-request.model';
 import { SearchBooksResponseItem } from './books-response.model';
 import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
@@ -102,7 +102,7 @@ export class BooksPageComponent implements OnInit{
       startIndex: this.elementsPerPage * this.pageIndex,
       maxResults: this.elementsPerPage,
       orderBy: SearchBooksOrderBy.RELEVANCE,
-      projection: SearchBooksProjection.FULL
+      projection: SearchBooksProjection.LITE
     }
     this.booksService.getBooksByTitle(params).subscribe(result => {
       this.books = result.items?.length ? result.items : [];
