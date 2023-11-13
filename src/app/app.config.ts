@@ -1,7 +1,7 @@
 import { ApplicationConfig, importProvidersFrom } from '@angular/core';
 import { provideRouter, withComponentInputBinding } from '@angular/router';
 import { ROUTES } from './app.routes';
-import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import { BrowserModule } from '@angular/platform-browser';
 import { provideAnimations } from '@angular/platform-browser/animations';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
@@ -32,7 +32,6 @@ export const appConfig: ApplicationConfig = {
   providers: [
     importProvidersFrom(...MODULES),
     provideRouter(ROUTES, withComponentInputBinding()),
-    provideAnimations(),
-    provideClientHydration(),
+    provideAnimations()
   ]
 };
